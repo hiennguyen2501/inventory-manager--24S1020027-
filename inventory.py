@@ -32,3 +32,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def view_inventory():
+    """Hiển thị toàn bộ sản phẩm trong kho"""
+    print("\n--- DANH SÁCH TỒN KHO ---")
+
+    if len(products) == 0:
+        print("Kho hiện đang trống.")
+        return
+
+    for p in products:
+        print(f"{p['name']} - Giá: {p['price']} - SL: {p['qty']}")
