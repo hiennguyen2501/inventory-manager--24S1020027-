@@ -43,3 +43,17 @@ def view_inventory():
 
     for p in products:
         print(f"{p['name']} - Giá: {p['price']} - SL: {p['qty']}")
+
+def check_low_stock():
+    """Cảnh báo sản phẩm có số lượng thấp (dưới 5)"""
+    print("\n--- CẢNH BÁO HẾT HÀNG ---")
+
+    low_items = [p for p in products if p['qty'] < 5]
+
+    if len(low_items) == 0:
+        print("Không có sản phẩm nào sắp hết hàng.")
+        return
+
+    print("Các sản phẩm có số lượng dưới 5:")
+    for p in low_items:
+        print(f"⚠ {p['name']} - SL: {p['qty']}")
